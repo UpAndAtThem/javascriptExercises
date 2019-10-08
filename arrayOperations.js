@@ -56,8 +56,109 @@ function shift(array) {
   return firstElem;
 }
 
-var count = [1, 2, 3, 4, 5];
+// Write a function indexOf that accepts two arguments: an array and a value. 
+// The function returns the first index at which the value can be found, or -1 if the value is not present.
 
-console.log(shift(count));  // 1
-console.log(count);        // [2, 3, 4, 5]  
+// iterate through the array.
+  // return the index when the index and value are ===
+// return -1
+
+function indexOf(array, value) {
+  for (var i = 0; i < array.length; i += 1) {
+    if (array[i] === value) { return i;}
+  }
+  return -1;
+}
+
+// Write a function lastIndexOf that accepts two arguments: an array and a value. 
+// The function returns the last index at which the value can be found in the array, 
+// or -1 if the value is not present.
+
+function lastIndexOf(array, value) {
+  for (var i = array.length - 1; i >= 0; i -= 1) {
+    if (array[i] === value) { return i;}
+  }
+  return -1;
+}
+
+// Write a function named slice that accepts three arguments: an Array, a start index, and an end index. 
+// The function should return a new Array that contains values from the original Array 
+// starting with the value at the starting index, and including all values up to but not including the end index. 
+// Do not modify the original Array.
+
+// You may use functions that were answers to previous practice problems to complete this problem, 
+// but do not use any built-in Array methods.
+
+// iterate for (i = startIndex; i < endIndex; i += 1)
+
+function slice(array, startIndex, endIndex) {
+  var result = [];
+
+  for (var i = startIndex; i < endIndex; i += 1) {
+    push(result, array[i]);
+  }
+
+  return result;
+}
+
+// Write a function named splice that accepts three arguments: an Array, a start index, 
+// and the number of values to remove. The function should remove values from the original Array, 
+// starting with the first index and removing the specified number of values. 
+// The function should return the removed values in a new Array.
+
+// You may use functions that were answers to previous practice problems to complete this problem, 
+// but do not use any built-in Array methods.
+
+function splice(array, startIndex, amountToRemove) {
+  var segment = [];
+
+  for (var i = startIndex; i < startIndex + amountToRemove; i += 1) {
+    push(segment, array[i]);
+    array[i] = array[i + amountToRemove];
+  }
+  
+  array.length = array.length - amountToRemove;
+
+  return segment;
+}
+
+// Write a function named concat that accepts two Array arguments. 
+// The function should return a new Array that contains the values from each of the original Arrays.
+
+// You may use functions that were answers to previous practice problems to complete this problem, 
+// but do not use any built-in Array methods.
+
+function concat(firstArr, secondArr) {
+  var result = [];
+
+  for (var i = 0; i < firstArr.length; i += 1) {
+    push(result, firstArr[i]);
+  }
+
+  for (var i = 0; i < secondArr.length; i += 1) {
+    push(result, secondArr[i]);
+  }
+
+  return result;
+}
+
+// Write a function named join that accepts two arguments: an Array and a String. 
+// The function should coerce each value in the Array to a String, 
+// and then join those values together using the second argument as a separator. 
+// You may assume that a separator will always be passed.
+
+// You can call the String function on any JavaScript value to get its String representation.
+
+function join(array, delimiter) {
+  var resultStr = '';
+
+  for (var i = 0; i < array.length; i += 1) {
+    resultStr += array[i]
+    if (i < array.length - 1) { 
+      resultStr += delimiter;
+    }
+  }
+
+  return resultStr;
+}
 
