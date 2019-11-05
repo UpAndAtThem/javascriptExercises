@@ -78,6 +78,7 @@ function lastIndexOf(array, value) {
   for (var i = array.length - 1; i >= 0; i -= 1) {
     if (array[i] === value) { return i;}
   }
+  
   return -1;
 }
 

@@ -12,3 +12,5 @@ function concat(array1, secondArgument) {
 
   return array1;
 }
+
+

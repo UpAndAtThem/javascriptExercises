@@ -11,3 +11,7 @@ function rollCall(namesArr) {
 names = ['Jason', 'Roger', 'Erika', 'Jim', 'Shelby', 'Tish'];
 
 rollCall(names);
+
+for (var i = 0; i < namesArr.length; i++) {
+  namesArr[i]
+}

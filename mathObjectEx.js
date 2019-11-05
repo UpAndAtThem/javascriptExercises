@@ -56,23 +56,6 @@ Math.floor(a);
 // values are equal. You may assume that the user always provides the min and max values.
 
 function random(lowerBound, upperBound) {
-  return (Math.ceil((lowerBound + (upperBound * Math.random()))) % upperBound) + 1;
+  return (Math.ceil(lowerBound + upperBound * Math.random()) % upperBound) + 1;
 }
-
-random(1, 10);
-var index = {};
-var count = 1;
-
-while (count <= 1000) {
-  var randomNum = random(1, 10);
-  if (index[randomNum]) {
-    index[randomNum] += 1;
-  } else {
-    index[randomNum] = 1;
-  }
-
-  count += 1;
-}
-
-console.log(index);
 
